@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Problème de multiple backgrounds du body*/
+body { background:url(images/bg_body.jpg) repeat;}
+#fond_ie { background: url(images/bg_header.jpg) center top no-repeat;}
+
+
+
+/*Problème de fond semi-transparent du menu*/
+#menu_top { 
+	background:transparent; 
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#906b9e2e,endColorstr=#906b9e2e); 
+    zoom: 1; }
+	
+	
+
+/*Problème de multiple background des titres de la partie du haut*/
+.content_hp h2.titre1, .content_hp h2.titre2, .content_hp h2.titre3{ background: url(images/bg_titre.jpg) no-repeat bottom left; padding:0 0 6px 0px}
+
+.content_hp h2 span {padding-left:30px;}
+
+.content_hp h2.titre1 span {display:block; background:url(images/icone1.jpg) left top no-repeat;}
+.content_hp h2.titre2 span {display:block; background:url(images/icone2.jpg) left top no-repeat;}
+.content_hp h2.titre3 span {display:block; background:url(images/icone3.jpg) left top no-repeat;}

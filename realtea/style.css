@@ -1,0 +1,216 @@
+@charset "utf-8";
+
+/*On ajoute les deux custom fonts : */
+@font-face { font-family: Melbourne;
+	src: url('fonts/Melbourne_regular_basic.otf');
+}
+@font-face { font-family: Ginko;
+	src: url('fonts/GINKO.TTF');
+}
+
+	
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size:14px;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+ul, ol, dl, h1, h2, h3, h4, h5 {
+	padding: 0;
+	margin: 0;
+	font-weight:normal;
+}
+
+ul, ol {list-style-type:none;}
+
+a img {	border: none;}
+
+/*Prise en charge de HTML 5 - Définit les nouvelles balises HTML 5 sur display:block afin que les navigateurs sachent comment effectuer un rendu correct des balises. */
+header, section, footer, aside, nav, article, figure {
+	display: block;
+	margin:0;
+}
+
+/*----------------------STYLE----------------------*/
+/*-------------------------------------------------*/
+
+.cl {clear:both}
+.margin20 { margin-bottom: 20px;}
+
+/* La définition du style des liens de votre site doit respecter cet ordre, y compris le groupe de sélecteurs qui créent l'effet de survol. */
+a:link {color: #42413C;}
+a:visited {color: #2b2a25;}
+a:hover, a:active, a:focus { /* ce groupe de sélecteurs offrira à un navigateur au clavier la même expérience de survol que celle d'une personne employant la souris. */
+	text-decoration: none;
+}
+
+h2 {font-size:28px;
+	font-family:Melbourne; /*j'utilise ma custom font Melbourne*/
+	padding-bottom:6px;
+	background:url(images/bg_titre.jpg) no-repeat bottom left;}
+	
+/*---------------------------------------------------*/
+/*---------------------------------------------------*/
+
+body { background: url(images/bg_header.jpg) center top no-repeat, url(images/bg_body.jpg) repeat;} /*multiple backgrounds : 2 fonds à body*/
+
+#header_top {height:176px; padding-top:29px;}
+
+.container {
+	width: 1000px;
+	margin: 0 auto; /* la valeur automatique sur les côtés, associée à la largeur, permet de centrer la mise en page */
+}
+
+.content ul, .content ol {
+	padding: 0 15px 15px 40px;
+}
+
+#menu_top { 
+	height:26px;
+	background-color:rgb(107,158,46); /*alternative pour les vieux navigateurs (sans transparence ici)*/
+	background-color:rgba(107,158,46,0.6); } /*le fond uni avec transparence comme on aime*/
+
+#menu_top ul {
+	width:565px;
+	padding-left:435px;
+	margin: 0 auto;
+	list-style: none;
+}
+
+#menu_top ul li {float:left;}
+
+#menu_top ul a, #menu_top ul a:visited {
+	padding: 2px 17px 0px;
+	display: block;
+	font-family:Melbourne;
+	font-size:18px;
+	color:#fff;
+	text-shadow:0 1px 2px #555;
+	text-decoration: none;
+}
+#menu_top ul a.actif, #menu_top ul a:hover, #menu_top ul a:active, #menu_top ul a:focus {
+	background:url(images/menu_hover.png) center top no-repeat;
+}
+
+/*------------------------------------------*/
+
+.content_hp {margin-bottom:20px; color:#595959;}
+.content_hp h2 { padding:0 0 6px 30px; background:none;}
+.content_hp h2.titre1 { background:url(images/icone1.jpg) left top no-repeat, url(images/bg_titre.jpg) no-repeat bottom left;}
+.content_hp h2.titre2 { background:url(images/icone2.jpg) left top no-repeat, url(images/bg_titre.jpg) no-repeat bottom left}
+.content_hp h2.titre3 { background:url(images/icone3.jpg) left top no-repeat, url(images/bg_titre.jpg) no-repeat bottom left}
+.content_hp header {padding:10px 0; height:160px;}
+.content_hp figure { float:left; margin-left: 20px; margin-top:-8px; }
+
+.content_hp article {
+	width:290px;
+	margin:0 21px;
+	float:left;
+}
+
+.content_hp a#header_more { 
+	float:right; 
+	margin-right:94px;
+	padding-left:12px;
+	font-size:13px; 
+	color:#517317; 
+	text-decoration:none;
+	background:url(images/puce_header_more.png) left center no-repeat}
+.content_hp a#header_more:hover { text-decoration:underline;}
+.content_hp p { color:#595959; font-size:14px; }
+
+
+/*--------------------NEWS-----------------------*/
+/*-----------------------------------------------*/
+
+aside#news {
+	/*On définit bêtement les propriétés de placement et de dimensions au bloc...*/
+	width:530px;
+	height:325px;
+	padding:35px 15px 40px 15px;
+	margin-top:40px;
+	/*Puis on le fait flotter à gauche pour qu'après les 2 blocs suivants se placent à côté (et non en-dessous)*/
+	float:left;
+	background:url(images/bg_news.jpg) top left no-repeat;}
+	
+#news article { position:relative; padding-left:50px;} /*Chaque article reçoit une position:relative afin de placer les éléments qu'il contient à partir de son origine. C'est utile pour le footer de l'article (voir plus bas)*/
+	
+#news h2 { visibility:hidden;} /*On cache le <h2> mais on laisse l'espace qu'il occupait pour pousser le contenu vers le bas. Le titre est intégré dans le background en image.*/
+#news h3 a{ 
+	font-size:15px;
+	font-weight:bold;
+	color:#270f0a;
+	text-decoration:none;}
+#news p{ font-size:13px; color:#270f0a}
+#news p.lire_suite a{ 
+	font-size:13px;
+	font-style:italic;
+	color:#830f00;
+	text-decoration:none;}
+#news p.lire_suite a:hover{ text-decoration:underline;}
+	
+#news footer { 
+	/*On positionne ce bloc en absolu par rapport à l'article conteneur (grâce à notre précédent position:relative sur <article>)*/
+    position: absolute;
+	/*Ainsi il se place tout en haut à gauche de l'article.*/
+    left: 0px;
+	top:0px;
+    width: 38px;
+	height:61px;
+	padding:19px 0 0 13px;
+	background:url(images/bg_date.png) no-repeat top left;
+}
+#news footer time { font-size:15px; color:#5c1100; font-family:Ginko;}
+#news footer time span { font-family:Arial, Helvetica, Verdana, sans-serif;}
+.contenu_article {margin-bottom:23px;}
+.contenu_article p {margin:7px 0 0px;}
+
+
+/*------------------HOME BAS---------------------*/
+/*-----------------------------------------------*/
+
+#store_locator ul { list-style-image:url(images/puce_feuille.png); padding-left:28px;} /*On ajoute notre image de feuille comme puce pour chaque élément de la liste*/
+#store_locator ul li {float:left; width:160px;} /*On indique que tous les <li> flottent à gauche*/
+#store_locator ul li:nth-child(2n) {float:right;} /*Ici le sélecteur CSS3 permet de faire flotter à droite un <li> sur deux (2n)*/
+#store_locator ul a { text-decoration:none; color:#3c580c;}
+#store_locator ul a:hover { text-decoration:underline;}
+
+#home_bas {
+	width:393px;
+	float:left;
+	color:#414141;
+	margin-top:40px;
+	margin-left:32px;}
+
+#newsletter { 
+	margin-top:30px; 
+	height:225px; /*La hauteur est nécessaire pour pouvoir afficher l'image tout en bas*/
+	background:url(images/pot_newsletter.png) no-repeat bottom right;}
+#newsletter input[type=email] {width:225px;}
+#newsletter input[type=submit] {
+	width:103px;
+	color:#ffebc1;
+	height:26px;
+	margin-top:8px;
+	text-shadow:0px -1px #802a15;
+	border:none;
+	background:url(images/bg_btn.jpg) no-repeat center top;
+}
+
+/*------------------------Pied de page-------------------------*/
+/*-------------------------------------------------------------*/
+
+#footer_site {
+	padding: 15px 0;
+	height:65px;
+	position: relative;/* donne hasLayout à IE6 de façon à permettre un effacement correct */
+	background:url(images/bg_footer.png) no-repeat center top;
+}
+
+#footer_site aside {float:left; padding-left:56px;}
+#footer_site aside p+p {margin:-1px 0 0 7px;}
+#footer_site p { margin: 3px 0; float:left; color:#45444; font-size:13px;}
+#footer_site p#copyright { float:right; color:#6e6e6e; font-size:12px;}
+#footer_site p#copyright a { color:#556d2f;}
